@@ -1,17 +1,20 @@
 from fastapi import APIRouter, Query, HTTPException
 from app.schemas.article import ArticleGet, ArticleCreate, ArticleUpdate
-from app.schemas.base_schema import PutResponseMessage
 from app.services.db import get_articles
-
+from app.services.auth import require_role
 router = APIRouter(prefix="/api", tags=["articles"])
 
 
-@router.get("/article/{id}", response_model=ArticleGet)
-async def get_article(id: int):
+@router.get("/article/{id}")
+async def get_article(id: int, user = require_role("admin")):
     articles = await get_articles()
     if id not in articles:
         raise HTTPException(404, "Please, provide correct article id")
-    return articles[id]
+    response = {
+        "article_id": articles[id],
+        "username": user["sub"]
+    }
+    return response
 
 @router.get("/articles/", response_model=list[ArticleGet])
 async def search_articles(
