@@ -1,41 +1,50 @@
-from fastapi import APIRouter, Query, HTTPException
+from fastapi import APIRouter, Query, HTTPException, Depends
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import select
 from app.schemas.article import ArticleGet, ArticleCreate, ArticleUpdate
-from app.services.db import get_articles
-from app.services.auth import require_role
+from app.services.db import get_db
+from app.models.article import Article
+
 router = APIRouter(prefix="/api", tags=["articles"])
 
 
-@router.get("/article/{id}")
-async def get_article(id: int):
-    articles = await get_articles()
-    if id not in articles:
+@router.get("/article/{id}", response_model=ArticleGet)
+async def get_article(id: int, db: AsyncSession = Depends(get_db)):
+    article = await db.get(Article, id)
+    if not article:
         raise HTTPException(404, "Please, provide correct article id")
-    response = {
-        "article_id": articles[id],
-        # "username": user["sub"]
-    }
-    return response
+    return article
+
 
 @router.get("/articles/", response_model=list[ArticleGet])
 async def search_articles(
     name: str | None = None,
     limit: int = Query(10, gt=0, le=100),
+    db: AsyncSession = Depends(get_db),
 ):
-    articles = await get_articles()
-    return articles.values()
+    query = select(Article).limit(limit)
+    if name:
+        query = query.where(Article.name.ilike(f"%{name}%"))
+    result = await db.execute(query)
+    return result.scalars().all()
+
 
 @router.post("/article/", response_model=ArticleGet, status_code=201)
-async def create_article(article: ArticleCreate):
-    articles = await get_articles()
-    if article.id in articles:
-        raise HTTPException(422, "You cant create article with existing id")
-    articles[article.id] = article
-    return article
+async def create_article(article: ArticleCreate, db: AsyncSession = Depends(get_db)):
+    db_article = Article(**article.model_dump())
+    db.add(db_article)
+    await db.commit()
+    await db.refresh(db_article)
+    return db_article
+
 
 @router.put("/article/{id}", response_model=ArticleGet)
-async def update_article(id: int, article: ArticleUpdate):
-    articles = await get_articles()
-    if id not in articles:
+async def update_article(id: int, article: ArticleUpdate, db: AsyncSession = Depends(get_db)):
+    db_article = await db.get(Article, id)
+    if not db_article:
         raise HTTPException(404, "Please, provide correct article id")
-    articles[id] = article
-    return article
+    for key, value in article.model_dump().items():
+        setattr(db_article, key, value)
+    await db.commit()
+    await db.refresh(db_article)
+    return db_article

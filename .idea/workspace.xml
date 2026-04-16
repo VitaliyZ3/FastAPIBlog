@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bae63529-7081-4ad6-a6ad-6e71a12a53df" name="Changes" comment="Lesson 4: Auth">
-      <change afterPath="$PROJECT_DIR$/.idea/PythonProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/ai.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_articles.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_users.py" afterDir="false" />
+    <list default="true" id="bae63529-7081-4ad6-a6ad-6e71a12a53df" name="Changes" comment="Lesson 5: Testing">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routers/article.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/article.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/article.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/article.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/db.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,21 +35,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python tests.Python tests for test_users.test_access_protected_route_invalid_token.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_users.test_get_current_user.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_users.test_unauthorised_get_current_user.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Run Pytest.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest in /.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Run App.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Python tests for test_users.test_access_protected_route_invalid_token.executor": "Run",
+    "Python tests.Python tests for test_users.test_get_current_user.executor": "Run",
+    "Python tests.Python tests for test_users.test_unauthorised_get_current_user.executor": "Run",
+    "Python tests.Run Pytest.executor": "Run",
+    "Python tests.pytest in /.executor": "Run",
+    "Python.Run App.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main"
   }
-}</component>
-  <component name="RunManager" selected="Python tests.Run Pytest">
+}]]></component>
+  <component name="RunManager" selected="Python.Run App">
     <configuration name="Run App" type="PythonConfigurationType" factoryName="Python">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
@@ -144,10 +138,10 @@
     </configuration>
     <list>
       <item itemvalue="Python.Run App" />
+      <item itemvalue="Python tests.Run Pytest" />
       <item itemvalue="Python tests.Python tests for test_users.test_access_protected_route_invalid_token" />
       <item itemvalue="Python tests.Python tests for test_users.test_get_current_user" />
       <item itemvalue="Python tests.Python tests for test_users.test_unauthorised_get_current_user" />
-      <item itemvalue="Python tests.Run Pytest" />
     </list>
     <recent_temporary>
       <list>
@@ -188,13 +182,22 @@
       <option name="project" value="LOCAL" />
       <updated>1776100419644</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Lesson 5: Testing">
+      <option name="closed" value="true" />
+      <created>1776354715491</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1776354715491</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created fast api app" />
     <MESSAGE value="Lesson 4: Auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 4: Auth" />
+    <MESSAGE value="Lesson 5: Testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 5: Testing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -208,6 +211,11 @@
           <url>file://$PROJECT_DIR$/tests/test_users.py</url>
           <line>26</line>
           <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/article.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
