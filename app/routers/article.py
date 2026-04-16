@@ -6,13 +6,13 @@ router = APIRouter(prefix="/api", tags=["articles"])
 
 
 @router.get("/article/{id}")
-async def get_article(id: int, user = require_role("admin")):
+async def get_article(id: int):
     articles = await get_articles()
     if id not in articles:
         raise HTTPException(404, "Please, provide correct article id")
     response = {
         "article_id": articles[id],
-        "username": user["sub"]
+        # "username": user["sub"]
     }
     return response
 
@@ -39,11 +39,3 @@ async def update_article(id: int, article: ArticleUpdate):
         raise HTTPException(404, "Please, provide correct article id")
     articles[id] = article
     return article
-
-@router.delete("/article/{id}")
-async def delete_article(article_id: int):
-    articles = await get_articles()
-    if not article_id in articles:
-        raise HTTPException(404, "Please, provide correct article id")
-    articles.pop(article_id)
-    return {"message": "Deleted"}
