@@ -1,13 +1,12 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
-from app.services.db import engine, Base, AsyncSessionLocal
+from app.services.db import AsyncSessionLocal
 from app.models.article import Article
 from app.routers import article, users
 
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
     async with AsyncSessionLocal() as session:
         seed = await session.get(Article, 1)
         if not seed:
