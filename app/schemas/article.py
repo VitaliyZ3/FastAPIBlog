@@ -10,7 +10,7 @@ class BaseArticle(BaseModel):
 
 
 class ArticleGet(BaseArticle):
-    id: int
+    _id: int
 
     model_config = ConfigDict(from_attributes=True)
 

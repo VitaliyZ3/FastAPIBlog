@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bae63529-7081-4ad6-a6ad-6e71a12a53df" name="Changes" comment="Lesson 5: Testing">
+    <list default="true" id="bae63529-7081-4ad6-a6ad-6e71a12a53df" name="Changes" comment="Lesson 7: Alembic + PSQL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routers/article.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/article.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/schemas/article.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/article.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,12 +20,25 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;VitaliyZ3&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/VitaliyZ3/FastAPIBlog&quot;,
+    &quot;accountId&quot;: &quot;0ea1f63a-efe0-4957-9b9a-6ce0d4f4de09&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -43,7 +55,7 @@
     "Python tests.Python tests for test_users.test_unauthorised_get_current_user.executor": "Run",
     "Python tests.Run Pytest.executor": "Run",
     "Python tests.pytest in /.executor": "Run",
-    "Python.Run App.executor": "Debug",
+    "Python.Run App.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main"
@@ -190,14 +202,32 @@
       <option name="project" value="LOCAL" />
       <updated>1776354715491</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Lesson 6: SQL Alchemy">
+      <option name="closed" value="true" />
+      <created>1776360072616</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1776360072616</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Lesson 7: Alembic + PSQL">
+      <option name="closed" value="true" />
+      <created>1776960153200</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1776960153200</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created fast api app" />
     <MESSAGE value="Lesson 4: Auth" />
     <MESSAGE value="Lesson 5: Testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 5: Testing" />
+    <MESSAGE value="Lesson 6: SQL Alchemy" />
+    <MESSAGE value="Lesson 7: Alembic + PSQL" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 7: Alembic + PSQL" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -214,8 +244,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/routers/article.py</url>
-          <line>33</line>
-          <option name="timeStamp" value="40" />
+          <line>50</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
